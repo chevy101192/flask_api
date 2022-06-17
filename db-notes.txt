@@ -1,0 +1,16 @@
+describe jobs;
+select * from jobs;
+insert into jobs (id, title, company, start_date, end_date) values (0, "Cloud Systems Enginner", "Equitus", "2021-6-21", null);
+CREATE USER 'admin'@'%' IDENTIFIED BY '!D10tErr0r'
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'%' WITH GRANT OPTION;
+DROP FROM jobs WHERE id = 1
+UPDATE
+
+CREATE TABLE jobs (
+    id MEDIUMINT NOT NULL AUTO_INCREMENT,
+    title varchar(255),
+    company varchar(255),
+    start_date varchar(255),
+    end_date varchar(255),
+    description varchar(255)
+)
