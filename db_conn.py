@@ -23,7 +23,6 @@ class database:
         cnx.close()
         
     def print_table(self):
-        job_list = {}
         cnx = mysql.connector.connect(user='admin', password='password', host='192.168.1.206', database='resume')
         mycursor = cnx.cursor()
         sql = "select * from jobs"
@@ -33,9 +32,7 @@ class database:
 
         for x in myresult:
             print(x)
-            job_list += x
         cnx.close()
-        return job_list
 
     def del_job(self):
         cnx = mysql.connector.connect(user='admin', password='password', host='192.168.1.206', database='resume')
@@ -52,6 +49,4 @@ class database:
 conn = database()
 #conn.add_job()
 #conn.del_job()
-a = conn.print_table()
-obj = json.dumps(a)
-print(obj)
+conn.print_table()
