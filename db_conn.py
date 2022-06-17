@@ -16,7 +16,6 @@ class database:
 
         mycursor = cnx.cursor()
         sql = "INSERT INTO jobs (title, company, start_date, end_date, description) VALUES ('{}', '{}', '{}', '{}', '{}');".format(title, company, s_date, e_date, description)
-        print(sql)
         mycursor.execute(sql)
         cnx.commit()
         mycursor.close()
@@ -40,13 +39,14 @@ class database:
         print("Which ID would you like to delete?")
         del_id = input("ID:")
         sql = "DELETE from jobs where id = {}".format(del_id)
-        print(sql)
+
         mycursor.execute(sql)
         cnx.commit()
         mycursor.close()
         cnx.close()
 
 conn = database()
-#conn.add_job()
-#conn.del_job()
+conn.add_job()
+conn.print_table()
+conn.del_job()
 conn.print_table()
